@@ -33,23 +33,6 @@ var dany = {
 };
 
 
-    // $("#jonSnow").attr("data", JSON.stringify(jonSnow));
-    // $("#cersei").attr("data", JSON.stringify(cersei));
-    // $("#cersei").attr("data", JSON.stringify(dany));
-
-    $("#jonSnow").on("click", function() {
-        $("#jonSnow").addClass('animated bounce').one('animationend', function() {
-            var charChoice = jonSnow;
-            var firstEnemy = cersei;
-            var secondEnemy = dany;
-            console.log(charChoice);
-        });
-        
-        $("#defender-area").html("#cersei");
-        $("#bystander-area").html("#dany #nightKing");
-    })
-
-
     $("#main-button").on("click", function(){
       $("#large-logo").animate({height: '75px'});
       $('#main-button').fadeOut();
@@ -62,7 +45,17 @@ var dany = {
       setTimeout(function(){ $('#choose-char').fadeIn() }, 350);
     });
 
+    $("#jonSnow").on("click", function() {
+        $("#jonSnow").addClass('animated bounce').one('animationend', chooseJon());
+    });
 
-// animateCSS('.my-element', 'bounce', function() {
-//     // Do something after animation
-//   })
+    function chooseJohn() {
+        var charChoice = jonSnow;
+        var defender = cersei;
+        var firstBystander = dany;
+        var secondBystander = nightKing;
+
+        var detatchCharChoice = 
+        $("#landing-page").fadeOut();
+        $("#cersei").appendTo()
+    }
