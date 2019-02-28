@@ -1,4 +1,18 @@
-$(document).ready(function(){
+
+
+// function animateCSS(element, animationName, callback) {
+//     const node = document.querySelector(element)
+//     node.classList.add('animated', animationName)
+
+//     function handleAnimationEnd() {
+//         node.classList.remove('animated', animationName)
+//         node.removeEventListener('animationend', handleAnimationEnd)
+
+//         if (typeof callback === 'function') callback()
+//     }
+
+//     node.addEventListener('animationend', handleAnimationEnd)
+// }
 
 var jonSnow = {
     hp: 100,
@@ -24,16 +38,15 @@ var dany = {
     // $("#cersei").attr("data", JSON.stringify(dany));
 
     $("#jonSnow").on("click", function() {
-        animateCSS(this, 'bounce', function() {
-            // Do something after animation
-          })
-        var charChoice = jonSnow;
-        var firstEnemy = cersei;
-        var secondEnemy = dany;
-        console.log(charChoice);
-        // $("#cersei").html("#defender-area")
-        // $("#dany").html("bystander")
+        $("#jonSnow").addClass('animated bounce').one('animationend', function() {
+            var charChoice = jonSnow;
+            var firstEnemy = cersei;
+            var secondEnemy = dany;
+            console.log(charChoice);
+        });
         
+        $("#defender-area").html("#cersei");
+        $("#bystander-area").html("#dany #nightKing");
     })
 
 
@@ -49,22 +62,6 @@ var dany = {
       setTimeout(function(){ $('#choose-char').fadeIn() }, 350);
     });
 
-
-});
-
-function animateCSS(element, animationName, callback) {
-    const node = document.querySelector(element)
-    node.classList.add('animated', animationName)
-
-    function handleAnimationEnd() {
-        node.classList.remove('animated', animationName)
-        node.removeEventListener('animationend', handleAnimationEnd)
-
-        if (typeof callback === 'function') callback()
-    }
-
-    node.addEventListener('animationend', handleAnimationEnd)
-}
 
 // animateCSS('.my-element', 'bounce', function() {
 //     // Do something after animation
