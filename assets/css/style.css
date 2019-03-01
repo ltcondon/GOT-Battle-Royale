@@ -14,10 +14,45 @@ h1 {
 
 }
 
+
+/* various headers */
 #choose-char {
     display: none;
     font-size: 48px;
 }
+
+#vs {
+    display: none; 
+    font-size: 38px;
+}
+
+
+/* .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .container:hover .image {
+    opacity: 0.3;
+  }
+  
+  .container:hover .middle {
+    opacity: 1;
+  }
+  
+  .text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+
+  } */
 
 #landing-page {
     text-align: center;
@@ -62,29 +97,13 @@ h1 {
     display: none;
 }
 
-.middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+#battlefield {
     text-align: center;
-  }
-  
-  .image-container:hover .image {
-    opacity: 0.3;
-    transition: .5s ease;
-  }
-  
-  .image-container:hover .middle {
-    opacity: 1;
-  }
-  
-  .text-image {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-  }
+    background: rgba(172, 167, 167, 0.25);
+    color: #ffffffce;
+    display: none;
+}
+
+#attack-button {
+    display: none;
+}

@@ -24,24 +24,36 @@
 <div class= "container" id="landing-page">
     <img src="assets/images/game-of-thrones-logo-large.png" alt="game-of-thrones-font" id="large-logo">
     <h1 id="opener">Battle Royale</h1>
-    <h1 id="choose-char">Choose Your Character</h1>
+    <h1 id="choose-char">Choose Your <span id=last-word>Character</span></h1>
     <hr class="my-4">
       <div class= "container" id= "character-choices">
           <div class= "row">
               <div class= "col-lg-6" id="left-characters">
-                  <img class="character-headshot img-thumbnail btn character-btn" id="jonSnow" src="assets/images/jonSnow-headshot.jpg">
-                  <img class="character-headshot img-thumbnail btn character-btn" id="cersei" src="assets/images/cersei.jpg">
+                <div class= "container character-container" id="jonSnow">
+                  <img class="character-headshot img-thumbnail character-btn" src="assets/images/jonSnow-headshot.jpg">
+                  <h4 class="btn player-button">John Snow</h4>
+                </div>
+                <div class= "container character-container" id="cersei">
+                  <img class="character-headshot img-thumbnail character-btn" src="assets/images/cersei.jpg">
+                  <h4 class="btn player-button">Cersei Lannister</h4>
+                </div>
               </div>
               <div class= "col-lg-6" id="right-characters">
-                  <img class="character-headshot img-thumbnail btn character-btn" id="dany" src="assets/images/dany-headshot.jpg">
-                  <img class="character-headshot img-thumbnail btn character-btn" id="nightKing" src="assets/images/nightKing-headshot.jpg">
+                  <div class= "container character-container" id="dany">
+                    <img class="character-headshot img-thumbnail character-btn" src="assets/images/dany-headshot.jpg">
+                    <h4 class="btn player-button">Danaerys Targaryan</h4>
+                  </div>
+                  <div class= "container character-container" id="nightKing">
+                    <img class="character-headshot img-thumbnail character-btn" src="assets/images/nightKing-headshot.jpg">
+                    <h4 class="btn player-button">The Night King</h4>
+                  </div>
               </div>
           </div>
       </div>
       <button class="btn btn-primary btn-lg" id= "main-button" href="#" role="button">Let's Fight!</button>
 </div>
 
-<div class = "container battlefield">
+<div class = "container" id="battlefield">
     <div class= "row">
         <div class= "col-lg-2" id= "bystander-area">
             <div id="first-bystander" style="width: 100%"></div>
@@ -51,14 +63,17 @@
             </div>
         </div>
         <div class= "col-lg-4" id= "placeholder"></div>
-        <div class= "col-lg-4" id= "defender-area"></div>
-        <div class= "col-lg-2" id= "enemy-stats"></div>
+        <div class= "col-lg-4" id= "defender-area"><h2>Current Opponent</h2></div>
+        <div class= "col-lg-2" id= "enemy-stats"><h2>Opponent Stats</h2></div>
     </div>
+    <!-- <div class="row" style= "text-align: center"><h1 id= "vs" style= "text-align: center">Vs.</h1></div> -->
     <div class= "row">
-            <div class= "col-lg-2" id= "player-stats"></div>
-            <div class= "col-lg-5" id= "player-area"></div>
-            <div class= "col-lg-5" id= "chat-log"></div>
+        <div class= "col-lg-2" id= "player-stats">
+            <button class="btn btn-warning btn-lg" id= "attack-button" href="#" role="button">Attack!</button> 
         </div>
+        <div class= "col-lg-5" id= "player-area"></div>
+        <div class= "col-lg-5" id= "chat-log"></div>
+    </div>
 </div>
     <hr class="my-4">
 
