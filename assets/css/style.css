@@ -3,6 +3,7 @@ body {
     background-image: url("../images/got-background.jpg");
 }
 
+
 h1 {
     font-size: 62px;
     padding: 10px;
@@ -61,6 +62,10 @@ h1 {
     padding: 5%;
     color: #ffffffce;
     
+}
+
+#logo-container {
+    padding-top: 5%;
 }
 
 #large-logo {

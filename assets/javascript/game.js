@@ -1,7 +1,7 @@
 // Queue landing screen when document has rendered:
 
 // $(document).ready(landingScreen);
-// function landingScreen()
+
 
 // Global variables declared:
 var characters = {
@@ -12,7 +12,7 @@ var characters = {
 }
 
 var charChosen = false;
-var opponentChosen = false;
+var oppChosen = false;
 var jonSnowChosen = false;
 var cerseiChosen = false;
 var danyChosen = false;
@@ -20,14 +20,24 @@ var nightKingChosen = false;
 var gameInitiated = false;
 var charID;
 var charDetach;
+// var dinklage = $('#dinklage');
+// var fightTheme = $('#fight-theme')
 // Global buttons declared:
 $("#main-button").click(characterScreen);
 
 
     $(".enemy-button").click(battleScreen);
 
+// function muteAudio() {
+//     $('#dinklage').pause();
+//     $('#fight-theme').pause();
+// };
+// muteAudio();
 // Primary functions:
 
+    function landingScreen() {
+        $('#dinklage').play();
+    }
 
 
     function characterScreen() {
@@ -38,10 +48,11 @@ $("#main-button").click(characterScreen);
       $("#right-characters").show();
       $("#right-characters").animate({right: '45%'}, 1500)
       $("#landing-page").animate({"padding-top": "-=4%"}, 200);
+      $("#logo-container").animate({"padding-top": "-=4%"}, 200);
       $("#opener ").fadeOut();
       setTimeout(function(){ $('#choose-char').fadeIn() }, 350);
       $(".character-container").click(function(){ 
-        if (!charChosen) {
+        if ((!charChosen) && (!gameInitiated)) {
             charID = $(this)
             charChosen = true;
             opponentScreen();
@@ -54,10 +65,18 @@ $("#main-button").click(characterScreen);
         $(".character-container").not($(charID)).fadeOut('fast'); // fade out every other div
             $(charID).addClass('animated bounce').one('animationend', function() {
                 $(charID).fadeOut();
-                $("#last.word").fadeOut();
-                setTimeout(function(){ $(".character-container").not($(charID)).fadeIn()}, 500);
-                setTimeout(function(){ $("#last-word").text("Opponent")}, 100);
+                $("#choose-char").fadeOut();
+                setTimeout(function(){ $(".character-container").not($(charID)).fadeIn()}, 800);
+                setTimeout(function(){ $("#choose-char").text("Choose Your Opponent")}, 500);
+                setTimeout(function(){ $("#choose-char").fadeIn('fast')}, 550);
             })
+            $(".character-container").click(function(){ 
+                if ((!oppChosen) && (!gameInitiated)) {
+                    charOpp = $(this);
+                    oppChosen = true;
+                    battleScreen();
+                };
+              });
         
         // $(".character-container").not($(charID)).fadeIn();
         // $("#landing-page").append($(".character-container").not($(charID)));
@@ -73,13 +92,18 @@ $("#main-button").click(characterScreen);
     }
     
     function battleScreen() {
+        gameInitiated = true;
       // var detatchCharChoice = 
       $("#landing-page").fadeOut();
       $("#battlefield").fadeIn();
-      $("#cersei").appendTo("#defender-area");
-      $("#dany").appendTo("#first-bystander");
-      $("#nightKing").appendTo("#second-bystander");
-      $("#jonSnow").appendTo("#player-area");
+      $(charID, charOpp).animate({width: '200px'});
+      $(charID).fadeIn();
+      
+      if (($(".character-container").attr("id") !== charID) && ($(".character-container").attr("id") !== charOpp)) {
+        $(".character-container").appendTo("#bystander-area");
+      }
+      $(charOpp).appendTo("#defender-area");
+      $(charID).appendTo("#player-area");
       $("#attack-button").fadeIn();
       $("#vs").fadeIn();
       // $("#player-stats").append(")

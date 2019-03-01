@@ -20,12 +20,19 @@
       Game of Thrones
     </a>
   </nav> -->
-
-<div class= "container" id="landing-page">
+  <audio id="dinklage" src="assets/images/Peter Dinklage Game of Thrones Theme Song.mp3" preload="none" loop></audio>
+  <audio id="fight-theme" src="assets/images/Young Blood.mp3" preload="none" loop></audio>
+  
+  <div class= "container" id= "logo-container">
     <img src="assets/images/game-of-thrones-logo-large.png" alt="game-of-thrones-font" id="large-logo">
+    <hr class="my-4">
+  </div>
+      
+<div class= "container" id="landing-page">
+    
     <h1 id="opener">Battle Royale</h1>
     <h1 id="choose-char">Choose Your <span id=last-word>Character</span></h1>
-    <hr class="my-4">
+
       <div class= "container" id= "character-choices">
           <div class= "row">
               <div class= "col-lg-6" id="left-characters">
@@ -55,24 +62,26 @@
 
 <div class = "container" id="battlefield">
     <div class= "row">
-        <div class= "col-lg-2" id= "bystander-area">
-            <div id="first-bystander" style="width: 100%"></div>
-            <div id="second-bystander" style="width: 100%"></div>
+        <div class= "col-lg-2" id= "bystander-area" style="width: 100%">
+            <!-- <div id="first-bystander" style="width: 100%"></div>
+            <div id="second-bystander" style="width: 100%"></div> -->
             <div class="row">
                 <div class ="col-lg-3"></div>
             </div>
         </div>
         <div class= "col-lg-4" id= "placeholder"></div>
         <div class= "col-lg-4" id= "defender-area"><h2>Current Opponent</h2></div>
-        <div class= "col-lg-2" id= "enemy-stats"><h2>Opponent Stats</h2></div>
+        <div class= "col-lg-2" id= "enemy-stats"><h3>Opponent Stats</h3></div>
     </div>
     <!-- <div class="row" style= "text-align: center"><h1 id= "vs" style= "text-align: center">Vs.</h1></div> -->
     <div class= "row">
         <div class= "col-lg-2" id= "player-stats">
+            <h3>Your Stats</h3>
+            <hr class="my-4">
             <button class="btn btn-warning btn-lg" id= "attack-button" href="#" role="button">Attack!</button> 
         </div>
-        <div class= "col-lg-5" id= "player-area"></div>
-        <div class= "col-lg-5" id= "chat-log"></div>
+        <div class= "col-lg-5" id= "player-area"><h2>You</h2></div>
+        <div class= "col-lg-5" id= "chat-log"><h3>Fight Log</h3></div>
     </div>
 </div>
     <hr class="my-4">
