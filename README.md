@@ -1,6 +1,6 @@
 # GOT-Battle-Royale
 
-url: [assets/images/site-screenshot.png]
+![game screenshot](assets/images/site-screenshot.png)
 
 Live link: https://ltcondon.github.io/GOT-Battle-Royale/
 
